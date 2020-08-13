@@ -1,1 +1,63 @@
-<p>rooms works!</p>
+<div class="room">
+    <!-- Header -->
+    <div class="header">
+        <h1 class="header__h1">Active Users</h1>
+        <h1 class="header__h1 header__h1--m ">Business Class Seat No. 5</h1>
+        <button mat-raised-button color="warn" class="header__btn">Leave Auction</button>
+    </div>
+
+    <!-- Room Content -->
+    <div class="content">
+        <div class="leftSide">
+            <div class="leftSide__user">
+                <p class="leftSide__paragraf">{{userName}}</p>
+                <p class="leftSide__paragraf">Adult - {{userDate}}</p>
+                <p class="leftSide__paragraf leftSide__paragraf--m">{{userAmount}} More Users...</p>
+            </div>
+            <ul class="leftSide__list">
+                <p>Business Class Offer:</p>
+                <li class="leftSide__list-item" *ngFor="let item of listPackage">&rsaquo; {{item}}</li>
+            </ul>
+        </div>
+        <div class="rightSide">
+            Chat communication
+        </div>
+    </div>
+
+    <!-- Time -->
+    <div class="time">
+        <h2 class="time__h2">Time left for auction:</h2>
+        <p class="time__timeLeft">{{time}}</p>
+    </div>
+
+    <!-- Bid-manual -->
+    <div class="bid-manual">
+        <form class="bid-manual-form">
+            <mat-form-field class="example-full-width">
+                <mat-label>Enter a new price</mat-label>
+                <input matInput #manuelValue>
+            </mat-form-field>
+            <button mat-raised-button color="manual" class="header__btn header__btn--form">Bid now</button>
+        </form>
+    </div>
+
+    <!-- Bid-automatic -->
+    <div class="bid-automatic">
+        <p class="leftSide__paragraf">Automatic bid:</p>
+        <form class="bid-automatic-form">
+            <mat-slide-toggle>Active me!</mat-slide-toggle>
+            <mat-form-field class="example-full-width">
+                <mat-label>Max bid price</mat-label>
+                <input matInput #manuelValue>
+            </mat-form-field>
+            <mat-form-field class="mat-form-field" appearance="fill">
+            <mat-label>Steps to increment</mat-label>
+            <mat-select>
+                <mat-option *ngFor="let stepInc of  stepIncrement" [value]="stepInc.value">
+                    {{stepInc.viewValue}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        </form>
+    </div>
+</div>
