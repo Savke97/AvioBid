@@ -1,0 +1,42 @@
+.center-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+}
+
+.card-content{
+    width: 500px;
+    display: grid;
+    grid-template-columns: 50px 1fr 1fr 1fr;
+}
+
+.icon{
+    grid-column: 1;
+}
+
+.image{
+    width: 50px;
+}
+
+.flight_info{
+    grid-column: 2;
+    margin: 0;
+    padding: 0;
+    padding-top: 10px;
+    float: left;
+    text-align: center;
+    border-right: 2px solid black;
+    line-height: 0px;
+}
+
+.flight_time{
+    grid-column: 3;
+    margin: 0;
+    padding: 0;
+    padding-top: 20px;
+    padding-left: 10px;
+    text-align: center;
+    float: left;
+    line-height: 0px;
+}

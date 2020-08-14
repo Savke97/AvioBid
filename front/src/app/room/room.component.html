@@ -1,0 +1,26 @@
+<app-card-info></app-card-info>
+<div class="active">
+    <h1>Active Rooms (3)</h1>
+</div>
+<div class="conteiner">
+    <div class="room" *ngFor="let item of proba">
+        <div class="room_class">
+            <h4>Business Class</h4>
+            <p><strong>Room no. 5</strong></p>
+        </div>
+        <div class="room_price">
+            <h4>Current Price</h4>
+            <p><strong>$ 1300</strong></p>
+            <h4>Total Bids</h4>
+            <p><strong>5</strong></p>
+        </div>
+        <div class="room_time">
+            <h4>End date and Time</h4>
+            <p><strong>12 Aug 2020 6:00 pm</strong></p>
+        </div>
+        <div class="room_join">
+            <button mat-flat-button color="accent">Accent</button>
+        </div>
+    </div>
+</div>
+<app-rooms></app-rooms>
