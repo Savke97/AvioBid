@@ -1,0 +1,53 @@
+
+// main color of website
+$color-blue:#006272; 
+
+
+header{
+    width:90%;
+    height: 60px;
+    margin: 0 auto; 
+}
+
+.navigation{
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    &__logo{
+        width:150px;
+        height: 40px;
+        background-image: url("./img/logo.png");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        content: '';
+
+        &:hover{
+            cursor: pointer;
+        }
+    }
+
+    &__menu{
+        &--btnLogin{
+            border-radius: 15px;
+            font-size: medium;
+        }
+        &--form{
+            display: grid;
+            grid-template-columns: 1fr;
+            width:90%;
+            margin: 0 auto;
+        }
+        ::ng-deep &--matMenu{
+            width:400px;
+        }
+        &--submit{
+            margin-top:15px;
+            background-color: $color-blue;
+            color:#fff;
+            font-weight: bold;
+            font-size: medium;
+        }
+        
+    }
+}
