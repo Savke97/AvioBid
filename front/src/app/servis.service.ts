@@ -7,6 +7,7 @@ export class ServisService {
 
   constructor() { }
 
+  current_max_Bid: number = 0;
   leaveauction: boolean = false;
   index: number;
   won: boolean = false;
