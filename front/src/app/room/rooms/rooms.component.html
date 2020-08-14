@@ -2,16 +2,16 @@
     <!-- Header -->
     <div class="header">
         <h1 class="header__h1">Active Users</h1>
-        <h1 class="header__h1 header__h1--m ">Business Class Seat No. 5</h1>
-        <button mat-raised-button color="warn" class="header__btn">Leave Auction</button>
+        <h1 class="header__h1 header__h1--m ">Room {{ servis.rooms[servis.index].room }}</h1>
+        <button mat-raised-button color="warn" class="header__btn" (click)="onLeaveAuction()">Leave Auction</button>
     </div>
 
     <!-- Room Content -->
     <div class="content">
         <div class="leftSide">
             <div class="leftSide__user">
-                <p class="leftSide__paragraf">{{userName}}</p>
-                <p class="leftSide__paragraf">Adult - {{userDate}}</p>
+                <p class="leftSide__paragraf">{{servis.user[0].name}}</p>
+                <p class="leftSide__paragraf">Adult - {{servis.user[0].born}}</p>
                 <p class="leftSide__paragraf leftSide__paragraf--m">{{userAmount}} More Users...</p>
             </div>
             <ul class="leftSide__list">
@@ -27,7 +27,7 @@
     <!-- Time -->
     <div class="time">
         <h2 class="time__h2">Time left for auction:</h2>
-        <p class="time__timeLeft">{{time}}</p>
+        <p class="time__timeLeft">{{ servis.rooms[servis.index].time }}</p>
     </div>
 
     <!-- Bid-manual -->

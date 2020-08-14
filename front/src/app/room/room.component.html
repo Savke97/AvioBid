@@ -1,26 +1,39 @@
-<app-card-info></app-card-info>
+<app-card-info id="goto"></app-card-info>
 <div class="active">
     <h1>Active Rooms (3)</h1>
 </div>
+
+
+
+<div class="spinerConteiner">
+    <div class="spinerConteiner_spiner">
+        <mat-spinner *ngIf="show_Spiner"></mat-spinner>
+    </div>
+</div>
+
+<div class="room_room" *ngIf="show_Room && servis.leaveauction == false">
+    <app-rooms></app-rooms>>
+</div>
+
 <div class="conteiner">
-    <div class="room" *ngFor="let item of proba">
+    <div class="room" *ngFor="let room of servis.rooms; let i = index">
         <div class="room_class">
             <h4>Business Class</h4>
-            <p><strong>Room no. 5</strong></p>
+            <p><strong>Room no. {{ room.room }}</strong></p>
         </div>
         <div class="room_price">
-            <h4>Current Price</h4>
-            <p><strong>$ 1300</strong></p>
+            <h3>Current Price</h3>
+            <p><strong>$ {{ room.price }}</strong></p>
             <h4>Total Bids</h4>
-            <p><strong>5</strong></p>
+            <p><strong>{{ room.bids }}</strong></p>
         </div>
         <div class="room_time">
             <h4>End date and Time</h4>
-            <p><strong>12 Aug 2020 6:00 pm</strong></p>
+            <p><strong>{{ room.time }}</strong></p>
         </div>
         <div class="room_join">
-            <button mat-flat-button color="accent">Accent</button>
+            <button mat-flat-button color="accent" (click)="onShowRoom(i)">Join</button>
         </div>
     </div>
 </div>
-<app-rooms></app-rooms>
+

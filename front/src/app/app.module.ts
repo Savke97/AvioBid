@@ -8,6 +8,7 @@ import { HeaderComponent } from './components/header/header.component';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatTooltipModule} from '@angular/material/tooltip';
+import { ServisService } from '../app/servis.service';
 
 
 
@@ -23,6 +24,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 
 @NgModule({
@@ -46,9 +48,10 @@ import { MatButtonModule } from '@angular/material/button';
     FormsModule,
     MatSlideToggleModule,
     MatSelectModule,
-    MatCardModule
+    MatCardModule,
+    MatProgressSpinnerModule
   ],
-  providers: [],
+  providers: [ServisService],
   bootstrap: [AppComponent]
 })
 
