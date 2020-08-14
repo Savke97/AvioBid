@@ -23,6 +23,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
+import { PopupWinnerComponent } from './components/popup-winner/popup-winner.component';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { MatButtonModule } from '@angular/material/button';
     HeaderComponent,
     RoomComponent,
     RoomsComponent,
-    CardInfoComponent
+    CardInfoComponent,
+    PopupWinnerComponent
   ],
   imports: [
     BrowserModule,
