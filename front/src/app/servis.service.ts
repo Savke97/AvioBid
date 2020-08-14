@@ -9,6 +9,7 @@ export class ServisService {
 
   leaveauction: boolean = false;
   index: number;
+  won: boolean = false;
 
   user = [
     {
