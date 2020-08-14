@@ -4,6 +4,7 @@ $ul-color: rgb(0, 95, 204);
 $text-color: rgb(56, 65, 77);
 $text-color-2: rgb(247, 55, 55);
 $mat-btn-color: rgb(156, 60, 156);
+$box-shadow: 0 2rem 4rem rgba(0,0,0,.2);
 // Mixins
 @mixin breakPointBefore {
     &::before {
@@ -28,15 +29,14 @@ $mat-btn-color: rgb(156, 60, 156);
 }
 
 // Default Settings room
-.btn {
 
-}
 .room {
   max-width: 114rem; // 1140px
   margin: 4rem auto;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
   color: $text-color;
+  box-shadow: $box-shadow;
 }
 
 // Header content

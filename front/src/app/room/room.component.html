@@ -1,9 +1,7 @@
 <app-card-info id="goto"></app-card-info>
 <div class="active">
-    <h1>Active Rooms (3)</h1>
+    <h1 class="active__head" style="font-size: 3rem;">Active Rooms (3)</h1>
 </div>
-
-
 
 <div class="spinerConteiner">
     <div class="spinerConteiner_spiner">
@@ -29,7 +27,8 @@
         </div>
         <div class="room_time">
             <h4>End date and Time</h4>
-            <p><strong>{{ room.time }}</strong></p>
+            <!-- Ovde nesto uradi za text ne mogu reasponsive -->
+            <p><strong>{{ room.time }}</strong></p> 
         </div>
         <div class="room_join">
             <button mat-flat-button color="accent" (click)="onShowRoom(i)">Join</button>

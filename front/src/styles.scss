@@ -1,4 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
+
 // Font family
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
 *,
@@ -9,4 +10,11 @@
     box-sizing: inherit;
 }
 html, body { height: 100%; font-size: 62.5%; box-sizing: border-box;}
-body { margin: 0; font-family: "Lato", "Helvetica Neue", sans-serif; font-weight: 400; }
+body { margin: 0; padding: 2rem; font-family: "Lato", "Helvetica Neue", sans-serif; font-weight: 400; }
+
+// Reasponsive
+@media only screen and (max-width: 40.625em) {
+    html,body {
+        padding: .5rem;
+    }
+}
