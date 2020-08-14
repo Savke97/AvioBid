@@ -1,21 +1,28 @@
+<mat-card class="card-content">
+    <div class="icon">
+        <img class="icon__image" src="assets/plane.svg">
+        <!---<mat-icon aria-hidden="false">airplanemode_active</mat-icon>-->
+    </div>
 
-<div class="center-content">
-    <mat-card class="card-content">
-        <div class="icon">
-            <img class="image" src="assets/plane.svg">
-            <!---<mat-icon aria-hidden="false">airplanemode_active</mat-icon>-->
+    <div class="flight_info">
+        <p>Economy</p>
+        <h3 style="font-weight: 600;">{{fromPlace}} to {{toPlace}}</h3>
+        <p>{{time}}</p>
+    </div>
+
+    <div class="flight_time">
+        <div class="flight_time-l">
+            <h4>17:30</h4>
+            <p>JFK</p>
         </div>
-
-        <div class="flight_info">
-            <p>Economy</p>
-            <p>New York to Dublin</p>
-            <p>Tue, 15 Dec 2020</p>
+        <div class="flight_time-r">
+            <h4>04:45</h4>
+            <p>DUB</p>
         </div>
+    </div>
 
-        <div class="flight_time">
-            <p>17:30 -------- 04:45</p>
-            <p>JFK -------- Dub</p>
-        </div>
-
-    </mat-card>
-</div>
+    <div class="flight_number">
+        <h3 class="flight_number-title" style="text-align: center; font-weight: 600;">EI 104</h3>
+        <p>Operated by Aer Lingus</p>
+    </div>
+</mat-card>

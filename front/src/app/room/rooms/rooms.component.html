@@ -12,7 +12,7 @@
             <div class="leftSide__user">
                 <p class="leftSide__paragraf">{{servis.user[0].name}}</p>
                 <p class="leftSide__paragraf">Adult - {{servis.user[0].born}}</p>
-                <p class="leftSide__paragraf leftSide__paragraf--m">{{userAmount}} More Users...</p>
+                <p class="leftSide__paragraf leftSide__paragraf--m">7 More Users...</p>
             </div>
             <ul class="leftSide__list">
                 <p>Business Class Offer:</p>
@@ -20,7 +20,7 @@
             </ul>
         </div>
         <div class="rightSide">
-            Chat communication
+            {{ servis.current_max_Bid}}
         </div>
     </div>
 
@@ -32,12 +32,12 @@
 
     <!-- Bid-manual -->
     <div class="bid-manual">
-        <form class="bid-manual-form">
+        <form class="bid-manual-form" (ngSubmit)="onSubmit(f)" #f="ngForm">
             <mat-form-field class="example-full-width">
                 <mat-label>Enter a new price</mat-label>
-                <input matInput #manuelValue>
+                <input matInput #manuelValue ngModel name="name">
             </mat-form-field>
-            <button mat-raised-button color="manual" class="header__btn header__btn--form">Bid now</button>
+            <button mat-raised-button color="manual" class="header__btn header__btn--form" type="submit">Bid now</button>
         </form>
     </div>
 
@@ -45,7 +45,7 @@
     <div class="bid-automatic">
         <p class="leftSide__paragraf">Automatic bid:</p>
         <form class="bid-automatic-form">
-            <mat-slide-toggle>Active me!</mat-slide-toggle>
+            <mat-slide-toggle (click)="onAutoBid()">Active me!</mat-slide-toggle>
             <mat-form-field class="example-full-width">
                 <mat-label>Max bid price</mat-label>
                 <input matInput #manuelValue>
