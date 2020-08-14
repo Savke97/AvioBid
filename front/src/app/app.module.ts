@@ -6,19 +6,23 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RoomComponent } from './room/room.component';
 import { RoomsComponent } from './room/rooms/rooms.component';
-import { MatIconModule } from '@angular/material/icon';
-import {MatButtonModule} from '@angular/material/button';
+import { CardInfoComponent } from './components/card-info/card-info.component';
 
 // Material Module
-import {MatInputModule} from '@angular/material/input';
+import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
-import {MatSlideToggleModule} from '@angular/material/slide-toggle';
-import {MatSelectModule} from '@angular/material/select';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatSelectModule } from '@angular/material/select';
+import { MatCardModule } from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+
 @NgModule({
   declarations: [
     AppComponent,
     RoomComponent,
-    RoomsComponent
+    RoomsComponent,
+    CardInfoComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +33,8 @@ import {MatSelectModule} from '@angular/material/select';
     MatIconModule,
     FormsModule,
     MatSlideToggleModule,
-    MatSelectModule
+    MatSelectModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
