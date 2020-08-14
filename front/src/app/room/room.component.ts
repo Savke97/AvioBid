@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ServisService } from '../servis.service';
 
 @Component({
   selector: 'app-room',
@@ -7,9 +8,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RoomComponent implements OnInit {
 
-  constructor() { }
-  proba = [0, 1, 2, 3];
-  ngOnInit(): void {
-  }
+  show_Room: boolean = false;
+  show_Spiner: boolean = false;
 
+  constructor(public servis: ServisService) { }
+
+  ngOnInit(): void {}
+
+  // tslint:disable-next-line: typedef
+  onShowRoom(roomeIndex: number){
+
+    document.getElementById("goto").scrollIntoView({behavior: 'smooth'});
+    this.servis.index = roomeIndex;
+    this.show_Spiner = true;
+    this.servis.leaveauction = false;
+
+    setInterval(() => {
+        this.show_Room = true;
+        this.show_Spiner = false;
+      }, 1000);
+  }
 }

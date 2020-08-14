@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { ServisService } from 'src/app/servis.service';
 
 interface StepIncrement{
   value: string,
@@ -20,8 +21,6 @@ export class RoomsComponent implements OnInit {
   userAmount: string = '3';
 // Bussines package
   listPackage: string [] = ['Laptop','Jakna','Torba','Ljubimac'];
-// Timer
-  time: string = '5h:48min';
 // Manual bids
   @ViewChild('manuelValue') manuelValue: string;
 // Steps
@@ -30,9 +29,13 @@ export class RoomsComponent implements OnInit {
     {value: '200', viewValue:'200'}
   ];
 
-  constructor() { }
+  constructor(public servis: ServisService) { }
 
   ngOnInit(): void {
+  }
+
+  onLeaveAuction(){
+    this.servis.leaveauction = true;
   }
  
 }
