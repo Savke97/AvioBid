@@ -44,8 +44,8 @@
     <!-- Bid-automatic -->
     <div class="bid-automatic">
         <p class="leftSide__paragraf">Automatic bid:</p>
-        <form class="bid-automatic-form">
-            <mat-slide-toggle (click)="onAutoBid()">Active me!</mat-slide-toggle>
+        <form class="bid-automatic-form" #f="ngForm">
+            <mat-slide-toggle (click)="onSubmit(f)" ngModel name="activeBid">Active me!</mat-slide-toggle>
             <mat-form-field class="example-full-width">
                 <mat-label>Max bid price</mat-label>
                 <input matInput #manuelValue>
@@ -53,7 +53,7 @@
             <mat-form-field class="mat-form-field" appearance="fill">
             <mat-label>Steps to increment</mat-label>
             <mat-select>
-                <mat-option *ngFor="let stepInc of  stepIncrement" [value]="stepInc.value">
+                <mat-option *ngFor="let stepInc of stepIncrement" [value]="stepInc.value">
                     {{stepInc.viewValue}}
                 </mat-option>
             </mat-select>

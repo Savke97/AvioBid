@@ -13,10 +13,8 @@ export class HeaderComponent implements OnInit {
   }
   logIn(): void{
     // After button 'Log in' is clicked
-    console.log('Logged in');
   }
   homeClick(): void{
     // after logo was clicked
-    console.log('logo was clicked');
   }
 }
