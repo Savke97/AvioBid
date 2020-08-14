@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ServisService } from 'src/app/servis.service';
+import { NgForm } from '@angular/forms';
 
 interface StepIncrement{
   value: string,
@@ -15,18 +16,14 @@ interface StepIncrement{
 
 export class RoomsComponent implements OnInit {
 
-//  User information
-  userName: string = 'Aca Perin';
-  userDate: string = '01 jan 1990'
-  userAmount: string = '3';
-// Bussines package
-  listPackage: string [] = ['Laptop','Jakna','Torba','Ljubimac'];
-// Manual bids
+
+  listPackage: string [] = ['Laptop', 'Jakna', 'Torba', 'Ljubimac'];
+
   @ViewChild('manuelValue') manuelValue: string;
-// Steps
+
   stepIncrement: StepIncrement[] = [
-    {value: '100', viewValue:'100'},
-    {value: '200', viewValue:'200'}
+    {value: '100', viewValue: '100'},
+    {value: '200', viewValue: '200'}
   ];
 
   constructor(public servis: ServisService) { }
@@ -37,5 +34,16 @@ export class RoomsComponent implements OnInit {
   onLeaveAuction(){
     this.servis.leaveauction = true;
   }
- 
+
+  onSubmit(form: NgForm){
+      if(form.value.name > this.servis.current_max_Bid){
+        this.servis.current_max_Bid = form.value.name;
+      }else{
+        /* Ubaci nesto kao swet alert */
+      }
+  }
+
+  onAutoBid(){
+    console.log("radi");
+  }
 }
