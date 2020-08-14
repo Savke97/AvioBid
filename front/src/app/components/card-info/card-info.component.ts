@@ -7,6 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CardInfoComponent implements OnInit {
 
+  fromPlace: string = 'New York';
+  toPlace: string = 'Dublin';
+  time: string = 'Tue, 15 Dec 2020';
+  
+  day: string = '1'
   constructor() { }
 
   ngOnInit(): void {
