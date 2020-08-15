@@ -29,6 +29,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { FooterComponent } from './components/footer/footer.component';
 import { AuctionConfirmComponent } from './components/auction-confirm/auction-confirm.component';
 import {MatExpansionModule} from '@angular/material/expansion';
+import { HeroPageComponent } from './components/hero-page/hero-page.component';
 
 
 @NgModule({
@@ -40,7 +41,8 @@ import {MatExpansionModule} from '@angular/material/expansion';
     CardInfoComponent,
     PopupWinnerComponent,
     FooterComponent,
-    AuctionConfirmComponent
+    AuctionConfirmComponent,
+    HeroPageComponent
   ],
   imports: [
     BrowserModule,

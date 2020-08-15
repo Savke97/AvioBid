@@ -10,11 +10,11 @@
     box-sizing: inherit;
 }
 html, body { height: 100%; font-size: 62.5%; box-sizing: border-box;}
-body { margin: 0; padding: 2rem; font-family: "Lato", "Helvetica Neue", sans-serif; font-weight: 400; }
+body { margin: 0; padding: 2rem 2rem 0 2rem; font-family: "Lato", "Helvetica Neue", sans-serif; font-weight: 400; }
 
 // Reasponsive
 @media only screen and (max-width: 40.625em) {
     html,body {
-        padding: .5rem;
+        padding: .5rem .5rem 0 .5rem;
     }
 }

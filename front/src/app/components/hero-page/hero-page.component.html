@@ -1,0 +1,26 @@
+<p>Potrebno je ubaciti nav-bar</p>
+<div class="hero-container">
+    <div class="img">
+        <img src="../../../assets/hero_1.PNG" class="img__first">
+        <p>Potrebno je ubaciti kartu</p>
+        <div class="img__box">
+            <img src="../../../assets/hero_2.PNG" class="img__second">
+            <div class="menu">
+                <form class="menu--form">
+                     <mat-form-field  class="menu--email" appearance="outline" (click)="$event.stopPropagation();">
+                        <mat-label for="email">Email</mat-label>
+                        <input type="email" matInput name="email">
+                      </mat-form-field>
+                      <mat-form-field class="menu--password" appearance="outline" (click)="$event.stopPropagation();">
+                        <mat-label>Password</mat-label>
+                        <input type="password" matInput name="password">
+                      </mat-form-field>
+                      <small matTooltip="Check your email for password" (click)="$event.stopPropagation();"><a href="#">What is my password?</a></small>
+                      <button class="menu--submit" type="submit" mat-stroked-button color="primary">Submit</button>
+                </form>
+    </div>
+        </div>       
+    </div>
+    
+</div>
+
