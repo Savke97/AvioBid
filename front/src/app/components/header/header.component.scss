@@ -2,6 +2,15 @@
 // main color of website
 $color-blue:#006272; 
 
+// Hack
+.hack {
+    content: "";
+    height: .2rem;
+    width: 100%;
+    background-color: #eee;
+    margin-bottom: 4rem;
+}
+
 
 header{
     width:90%;
@@ -14,6 +23,7 @@ header{
     justify-content: space-between;
     margin: 0 auto;
     transition: all .2s;
+    
     &__logo{
         width:150px;
         height: 40px;
@@ -51,4 +61,5 @@ header{
         }
         
     }
+    
 }

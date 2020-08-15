@@ -28,6 +28,7 @@ import { PopupWinnerComponent } from './components/popup-winner/popup-winner.com
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,7 +36,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     RoomComponent,
     RoomsComponent,
     CardInfoComponent,
-    PopupWinnerComponent
+    PopupWinnerComponent,
   ],
   imports: [
     BrowserModule,
