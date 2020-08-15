@@ -1,24 +1,32 @@
 $footer-color:#F9F9F9;
-$footer-border: #696969;
+$footer-efekat: hsla(0, 0%, 93%, 0.959);
 footer{
     background-color: $footer-color;
     width:100%;
     min-width: 100%;
     height: auto;
-    position:relative;
+    position: relative;
     bottom:0;
-    border-top:1px solid $footer-border;
-    //Zasto ima prostora ispod futera i dna strane??   -- RESENO :)
+    margin-top: 10rem;
+    border-top:1px solid $footer-color; // Morao sam da menjam border boju, lepse kad je ista
+    //Zasto ima prostora ispod futera i dna strane??   -- Reseno ! - Mare
 }
 .footer-top{
     height: 80px;
     display: flex;
     justify-content: space-between;
-    text-align: center;
+    align-items: center;
     width:70%;
     margin: 0 auto;
     padding-top:3%;
     background-color: $footer-color;
+    p {margin: 0}
+    &-efekat:hover {
+        background-color: $footer-efekat;
+        cursor: pointer;
+        padding: 1rem;
+        transition: all .2s;
+    }
 }
 .footer-limit{
     width:90%;
@@ -59,6 +67,7 @@ footer{
     .footer-limit{
         display:block;
         font-size:1.2em;
+        text-align: center;
     }
     .icons{
         justify-content: space-around;
