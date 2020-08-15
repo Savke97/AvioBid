@@ -12,7 +12,7 @@ $mat-btn-color: rgb(156, 60, 156);
         box-shadow: none;
     }
     50% {
-        transform: scale(1.2);
+        transform: scale(1.1);
         box-shadow: 0 1rem 4rem rgba(0,0,0,.25);
     }
     100% {
@@ -56,7 +56,7 @@ $mat-btn-color: rgb(156, 60, 156);
     margin-top: 10px;
     justify-content: center;
     align-content: center;
-
+    border-radius: .5rem;
     @media only screen and (max-width: 33.125em) {
         grid-template-columns: 0;
     }
