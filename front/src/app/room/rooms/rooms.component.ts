@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ServisService } from 'src/app/servis.service';
 import { NgForm } from '@angular/forms';
+import { from } from 'rxjs';
 
 interface StepIncrement{
   value: string,
@@ -16,7 +17,7 @@ interface StepIncrement{
 
 export class RoomsComponent implements OnInit {
 
-
+  counter:number = 1;
   listPackage: string [] = ['Laptop', 'Jakna', 'Torba', 'Ljubimac'];
 
   @ViewChild('manuelValue') manuelValue: string;
@@ -43,7 +44,10 @@ export class RoomsComponent implements OnInit {
       }
   }
 
-  onAutoBid(){
-    console.log("radi");
+  onAutoBid(form: NgForm){
+    this.counter++;
+    this.counter % 2 ? console.log("Auto bid ugasen") : console.log("Auto bid Upaljen");
+    this.servis.current_max_Bid += form.value.bidvalue;
+    console.log(form.value.bidvalue)
   }
 }

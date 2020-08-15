@@ -8,27 +8,34 @@ export const helloWorld = functions.https.onRequest((request, response) =>{
     response.send("Hello from firebase");
 })
 
-export const getItem = functions.https.onRequest(async (request, Response) =>{
-    console.log('Called [getItem]: ' + request.headers);
-
+export const getUsers = functions.https.onRequest(async (request, response) =>{
     try{
-        const itemsRef = db.collection('items');
-        const items: any = [];
-        const snapshot = await itemsRef.get();
+        const usersRef = db.collection('users');
+        const users: any = [];
+        const snapshot = await usersRef.get();
         snapshot.forEach(doc => {
-            console.log(doc.id, '=>', doc.data());
-            items.push(doc.data());
+            users.push(doc.data());
         });
-        Response.send(items);
+        response.send(users);
     } catch(error){
-        console.error(error);
-        Response.status(500).send(error);
+        response.status(500).send(error);
     }
 });
-// // Start writing Firebase Functions
-// // https://firebase.google.com/docs/functions/typescript
-//
-// export const helloWorld = functions.https.onRequest((request, response) => {
-//   functions.logger.info("Hello logs!", {structuredData: true});
-//   response.send("Hello from Firebase!");
-// });
+
+
+export const setUsers = functions.https.onRequest(async (request, response)=>{
+    try{
+        const result = await db.collection('users').doc('proba').set({ email: request.body.email, name: request.body.name});
+        const newUser = await db.collection('users').doc('proba').get();
+
+        let res;
+        if(result){
+            res = newUser.data();
+        } else{
+            res = undefined;
+        }
+        response.send(res);
+    } catch(error){
+        response.status(500).send(error);
+    }
+});
