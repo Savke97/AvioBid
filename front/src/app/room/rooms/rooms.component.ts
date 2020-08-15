@@ -1,7 +1,6 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild} from '@angular/core';
 import { ServisService } from 'src/app/servis.service';
-import { NgForm } from '@angular/forms';
-import { from } from 'rxjs';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 interface StepIncrement{
   value: string,
@@ -17,37 +16,53 @@ interface StepIncrement{
 
 export class RoomsComponent implements OnInit {
 
-  counter:number = 1;
+  counter: number = 1;
   listPackage: string [] = ['Laptop', 'Jakna', 'Torba', 'Ljubimac'];
 
-  @ViewChild('manuelValue') manuelValue: string;
+  /* Deklaracija za forme */
+  autoBidingForm: FormGroup;
+  max_Auto_Bid: number;
+  increment: number;
 
-  stepIncrement: StepIncrement[] = [
-    {value: '100', viewValue: '100'},
-    {value: '200', viewValue: '200'}
-  ];
+  bidingForm: FormGroup;
+  biding_Price: number;
 
   constructor(public servis: ServisService) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+
+    /* Kreiranje FormGrupa */
+    this.autoBidingForm = new FormGroup({
+      'autoBidMaxPrice': new FormControl(null, Validators.required),
+      'increment': new FormControl(null, Validators.required)
+    });
+
+    this.bidingForm = new FormGroup({
+
+      'bidingPrice': new FormControl(null, Validators.required)
+    })
+  }
+
+
+  /* Submit za auto bid formu */
+  onSubmitAutoBid(){
+
+    this.max_Auto_Bid = this.autoBidingForm.get('autoBidMaxPrice').value;
+    this.increment = this.autoBidingForm.get('increment').value;
+  }
+
+  /* Submit za bid fromu */
+  onBidSubmit(){
+    
+    this.biding_Price = this.bidingForm.get('bidingPrice').value;
   }
 
   onLeaveAuction(){
     this.servis.leaveauction = true;
   }
 
-  onSubmit(form: NgForm){
-      if(form.value.name > this.servis.current_max_Bid){
-        this.servis.current_max_Bid = form.value.name;
-      }else{
-        /* Ubaci nesto kao swet alert */
-      }
-  }
-
-  onAutoBid(form: NgForm){
+  onAutoSlide(){
     this.counter++;
-    this.counter % 2 ? console.log("Auto bid ugasen") : console.log("Auto bid Upaljen");
-    this.servis.current_max_Bid += form.value.bidvalue;
-    console.log(form.value.bidvalue)
+    this.counter % 2 ? console.log('Auto bid ugasen') : console.log('Auto bid Upaljen');
   }
 }

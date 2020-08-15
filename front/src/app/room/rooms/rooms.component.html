@@ -34,32 +34,36 @@
 
     <!-- Bid-manual -->
     <div class="bid-manual">
-        <form class="bid-manual-form" (ngSubmit)="onSubmit(f)" #f="ngForm">
-            <mat-form-field class="example-full-width">
-                <mat-label>Enter a new price</mat-label>
-                <input matInput #manuelValue ngModel name="name">
-            </mat-form-field>
-            <button mat-raised-button color="manual" class="header__btn header__btn--form" type="submit">Bid now</button>
+        <form class="bid-manual-form" [formGroup]="bidingForm" (ngSubmit)="onBidSubmit()">
+                <mat-form-field class="example-full-width">
+                    <mat-label>Enter a new price</mat-label>
+                    <input 
+                    matInput
+                    formControlName="bidingPrice"
+                    >
+                </mat-form-field>
+            <button mat-raised-button color="manual" class="header__btn header__btn--form" type="submit" [disabled]="!bidingForm.valid">Bid now</button>
         </form>
     </div>
 
     <!-- Bid-automatic -->
     <div class="bid-automatic">
         <p class="leftSide__paragraf">Automatic bid:</p>
-        <form class="bid-automatic-form" #f="ngForm">
-            <mat-slide-toggle (click)="onSubmit(f)" ngModel name="activeBid">Active me!</mat-slide-toggle>
-            <mat-form-field class="example-full-width">
-                <mat-label>Max bid price</mat-label>
-                <input matInput #manuelValue>
-            </mat-form-field>
-            <mat-form-field class="mat-form-field" appearance="fill">
-            <mat-label>Steps to increment</mat-label>
-            <mat-select>
-                <mat-option *ngFor="let stepInc of stepIncrement" [value]="stepInc.value">
-                    {{stepInc.viewValue}}
-                </mat-option>
-            </mat-select>
-        </mat-form-field>
-        </form>
+            <form class="bid-automatic-form" [formGroup]="autoBidingForm" (ngSubmit)="onSubmitAutoBid()">
+                <mat-slide-toggle (click)="onAutoSlide()">Active me!</mat-slide-toggle>
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Max bid price</mat-label>
+                        <input 
+                        formControlName="autoBidMaxPrice"
+                        matInput>
+                    </mat-form-field>
+                <mat-form-field class="mat-form-field" appearance="fill">
+                    <mat-label>Steps to increment</mat-label>
+                        <input 
+                        formControlName="increment"
+                        matInput>
+                    </mat-form-field>
+                <button mat-raised-button color="manual" class="header__btn header__btn--form" type="submit">Bid now</button>
+            </form>
     </div>
 </div>

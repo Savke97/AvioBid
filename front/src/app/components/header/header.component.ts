@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-header',
@@ -6,15 +7,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
+
   logedIn = false;
-  constructor() { }
+
+  loginForm: FormGroup;
+  constructor() {}
 
   ngOnInit(): void {
+
+    this.loginForm = new FormGroup({
+      'email': new FormControl(null, [Validators.required, Validators.email]),
+      'password': new FormControl(null, [Validators.required, Validators.minLength(5)])
+    })
   }
-  logIn(): void{
-    // After button 'Log in' is clicked
-  }
-  homeClick(): void{
-    // after logo was clicked
-  }
+  
+  onSubmit() {}
+
 }
