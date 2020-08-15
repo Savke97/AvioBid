@@ -26,6 +26,9 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { PopupWinnerComponent } from './components/popup-winner/popup-winner.component';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { FooterComponent } from './components/footer/footer.component';
+import { AuctionConfirmComponent } from './components/auction-confirm/auction-confirm.component';
+import {MatExpansionModule} from '@angular/material/expansion';
 
 
 @NgModule({
@@ -35,7 +38,9 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     RoomComponent,
     RoomsComponent,
     CardInfoComponent,
-    PopupWinnerComponent
+    PopupWinnerComponent,
+    FooterComponent,
+    AuctionConfirmComponent
   ],
   imports: [
     BrowserModule,
@@ -51,7 +56,8 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     MatSlideToggleModule,
     MatSelectModule,
     MatCardModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatExpansionModule
   ],
   providers: [ServisService],
   bootstrap: [AppComponent]
