@@ -1,26 +1,30 @@
-<p>Potrebno je ubaciti nav-bar</p>
-<div class="hero-container">
+<app-auction-confirm *ngIf="log"></app-auction-confirm>
+<div class="hero-container" *ngIf="!log">
     <div class="img">
-        <img src="../../../assets/hero_1.PNG" class="img__first">
-        <p>Potrebno je ubaciti kartu</p>
         <div class="img__box">
             <img src="../../../assets/hero_2.PNG" class="img__second">
             <div class="menu">
-                <form class="menu--form">
-                     <mat-form-field  class="menu--email" appearance="outline" (click)="$event.stopPropagation();">
+                <form class="menu--form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                     <mat-form-field  class="menu--email" appearance="outline">
                         <mat-label for="email">Email</mat-label>
-                        <input type="email" matInput name="email">
+                        <input 
+                        formControlName="email"
+                        type="email" 
+                        matInput>
                       </mat-form-field>
-                      <mat-form-field class="menu--password" appearance="outline" (click)="$event.stopPropagation();">
+                      <mat-form-field class="menu--password" appearance="outline">
                         <mat-label>Password</mat-label>
-                        <input type="password" matInput name="password">
+                        <input 
+                        formControlName="password"
+                        type="password" 
+                        matInput
+                        >
                       </mat-form-field>
-                      <small matTooltip="Check your email for password" (click)="$event.stopPropagation();"><a href="#">What is my password?</a></small>
-                      <button class="menu--submit" type="submit" mat-stroked-button color="primary">Submit</button>
+                      <small matTooltip="Check your email for password"><a href="#">What is my password?</a></small>
+                      <button class="menu--submit" type="submit" mat-stroked-button color="primary">Complete Purchase</button>
                 </form>
-    </div>
+            </div>
         </div>       
-    </div>
-    
+    </div> 
 </div>
 

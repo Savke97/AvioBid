@@ -1,20 +1,24 @@
-
 <!-- Potvrda da li hoce aukciju ili ne -->
 <section class="auctionConfirm">
-    <article class="auctionConfirm__body">
-        <header class="auctionConfirm__body--thanks"><p>Thank you for flying with us!</p></header>
-        <header class="auctionConfirm__body--question"><p>Would you like to be part of our online auction?</p></header>
-        <section class="auctionConfirm__body--buttons">
-            <button (click)="auctionYes()" mat-raised-button color="primary">Yes, please</button>
-            <button (click)="auctionNo()" mat-raised-button color="warn">Not Interested</button>
-        </section>
-        <mat-expansion-panel class="auctionConfirm__body--addedInfo" hideToggle>
-            <mat-expansion-panel-header>
-              <mat-panel-title>
-                Want to know more about this auction? Click me!
-              </mat-panel-title>
-            </mat-expansion-panel-header>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus laboriosam molestiae saepe odit facilis at sed maiores soluta! Architecto quae repudiandae ullam alias earum inventore in odio vitae laudantium neque?</p>
-        </mat-expansion-panel>
-    </article>
+  <article class="auctionConfirm__body">
+    <header class="auctionConfirm__body--thanks">
+      <p>Thank you for flying with us!</p>
+    </header>
+    <header class="auctionConfirm__body--question">
+      <p>Would you like to be part of our online auction?</p>
+    </header>
+    <section class="auctionConfirm__body--buttons">
+      <button [routerLink]="['/Bid']" mat-raised-button color="primary">Yes, please</button>
+      <button mat-raised-button color="warn">Not Interested</button>
+    </section>
+    <mat-expansion-panel class="auctionConfirm__body--addedInfo" hideToggle>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Want to know more about this auction? Click me!
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus laboriosam molestiae saepe odit facilis at
+        sed maiores soluta! Architecto quae repudiandae ullam alias earum inventore in odio vitae laudantium neque?</p>
+    </mat-expansion-panel>
+  </article>
 </section>

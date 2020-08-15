@@ -49,6 +49,7 @@ export class RoomsComponent implements OnInit {
 
     this.max_Auto_Bid = this.autoBidingForm.get('autoBidMaxPrice').value;
     this.increment = this.autoBidingForm.get('increment').value;
+    console.log(this.autoBidingForm);
   }
 
   /* Submit za bid fromu */
