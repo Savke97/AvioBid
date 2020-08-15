@@ -8,6 +8,7 @@ footer{
     position:relative;
     bottom:0;
     border-top:1px solid $footer-border;
+    //Zasto ima prostora ispod futera i dna strane??
 }
 .footer-top{
     height: 80px;
@@ -21,13 +22,31 @@ footer{
 }
 .footer-limit{
     width:90%;
-    padding-top:20px;
     margin: 0 auto;
     display: grid;
     grid-template-columns: 40% auto 30%;
-    margin-top:2%;
-    margin-bottom:2%;
+    padding-top:2%;
+    padding-bottom:2%;
 }
+.icons > img{
+    width:120px;
+    height: auto;
+    object-fit: contain;
+}
+.icons{
+    display:flex;
+    justify-content: flex-end;
+}
+#iconTwo{
+    width:70px;
+    margin-left: 15px;
+}
+.copyright{
+    position: relative;
+    top:50%;
+    overflow: hidden;
+}
+
 @media(max-width:768px){
     .footer-top{
         display: block;
@@ -40,5 +59,8 @@ footer{
     .footer-limit{
         display:block;
         font-size:1.2em;
+    }
+    .icons{
+        justify-content: space-around;
     }
 }
