@@ -2,8 +2,9 @@ import User from '../models/user.interface';
 import * as functions from 'firebase-functions';
 import { db } from '../firebase';
 
+// [Route("api/users")]
 
-
+// [HttpGet]
 export const getAllUsers = functions.https.onRequest(async (request, response) => {
     try {
         const usersRef = db.collection('users');
@@ -18,6 +19,7 @@ export const getAllUsers = functions.https.onRequest(async (request, response) =
     }
 });
 
+// [HttpGet("{userId}")]
 export const getUserById = functions.https.onRequest(async (request, response) => {
     try {
         const userRef = db.collection('users').doc(request.params.userId);
@@ -28,6 +30,7 @@ export const getUserById = functions.https.onRequest(async (request, response) =
     }
 });
 
+// [HttpPost]
 export const setUser = functions.https.onRequest(async (request, response) => {
     try {
         const user: User = request.body;
@@ -38,6 +41,7 @@ export const setUser = functions.https.onRequest(async (request, response) => {
     }
 });
 
+// [HttpDelete("{userId}")]
 export const deleteUserById = functions.https.onRequest(async (request, response) => {
     try {
         const userRef = db.collection('users').doc(request.params.userId);
