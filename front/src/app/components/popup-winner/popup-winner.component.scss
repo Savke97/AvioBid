@@ -1,13 +1,22 @@
 //main webite color
 $color-blue:#006272; 
+//plain black color
+$color-black: #000;
 
 .background{
     //Grey background over entire display
     width:100%;
     height: 100%;
-    background-color:rgba(0, 0, 0, 0.76);
-    z-index: 100;
     position:fixed;
+    top:0;
+    background-color: rgba($color-black, .5);
+    z-index: 9999;
+    transition: all .3s;
+    @supports (-webkit-backdrop-filter: blur()) or (backdrop-filter: blur()) {
+        -webkit-backdrop-filter: blur(.1rem);
+        backdrop-filter: blur(.1rem);
+        background-color: rgba($color-black, .7);
+    }
 }
 .body{
     position: relative;

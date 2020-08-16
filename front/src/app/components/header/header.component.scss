@@ -55,7 +55,7 @@ header{
         &--submit{
             margin-top:15px;
             background-color: $color-blue;
-            color:#fff;
+            color:#fff !important;  //tekst je bio plave boje, nije se video lepo, nije citalo ovu vrednost
             font-weight: bold;
             font-size: medium;
         }
