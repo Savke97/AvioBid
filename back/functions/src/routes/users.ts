@@ -9,5 +9,3 @@ router.delete("/:userId", UserController.deleteUserById);
 
 
 module.exports = router;
-
-
