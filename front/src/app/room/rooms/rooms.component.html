@@ -48,7 +48,7 @@
     <div class="bid-automatic">
         <p class="leftSide__paragraf">Automatic bid:</p>
         <form class="bid-automatic-form" [formGroup]="autoBidingForm" (ngSubmit)="onSubmitAutoBid()">
-            <button mat-raised-button color="manual" class="header__btn header__btn--form" type="submit">Activate Me</button>
+            <button mat-raised-button color="manual" class="header__btn header__btn--form" type="submit">{{ auto_Bid_Text_Button }}</button>
             <mat-form-field class="example-full-width">
                 <mat-label>Max bid price</mat-label>
                 <input formControlName="autoBidMaxPrice" matInput>
