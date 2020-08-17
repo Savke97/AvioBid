@@ -15,10 +15,10 @@ export class RoomComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  onShowRoom(roomeIndex: number){
+  onShowRoom(roomIndex: number){
 
     document.getElementById("goto").scrollIntoView({behavior: 'smooth'});
-    this.servis.index = roomeIndex;
+    this.servis.index = roomIndex;
     this.show_Spiner = true;
     this.servis.leaveauction = false;
 
