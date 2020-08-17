@@ -8,7 +8,6 @@ import { ServisService } from './servis.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'test';
-
+  
   constructor(public servis: ServisService){}
 }

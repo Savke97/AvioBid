@@ -21,8 +21,6 @@ export class HeaderComponent implements OnInit {
     })
   }
   
-  onSubmit() {
-    console.log(this.loginForm);
-  }
+  onSubmit() {}
 
 }

@@ -15,7 +15,6 @@ export class RoomComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  // tslint:disable-next-line: typedef
   onShowRoom(roomeIndex: number){
 
     document.getElementById("goto").scrollIntoView({behavior: 'smooth'});
@@ -26,6 +25,6 @@ export class RoomComponent implements OnInit {
     setInterval(() => {
         this.show_Room = true;
         this.show_Spiner = false;
-      }, 1000);
+    }, 1000);
   }
 }

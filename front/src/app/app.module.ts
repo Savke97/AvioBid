@@ -9,9 +9,6 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import { ServisService } from '../app/servis.service';
-
-
-
 import { RoomComponent } from './room/room.component';
 import { RoomsComponent } from './room/rooms/rooms.component';
 import { CardInfoComponent } from './components/card-info/card-info.component';
@@ -30,6 +27,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { AuctionConfirmComponent } from './components/auction-confirm/auction-confirm.component';
 import {MatExpansionModule} from '@angular/material/expansion';
 import { HeroPageComponent } from './components/hero-page/hero-page.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -60,7 +58,8 @@ import { HeroPageComponent } from './components/hero-page/hero-page.component';
     MatCardModule,
     MatProgressSpinnerModule,
     ReactiveFormsModule,
-    MatExpansionModule
+    MatExpansionModule,
+    HttpClientModule
   ],
   providers: [ServisService],
   bootstrap: [AppComponent]

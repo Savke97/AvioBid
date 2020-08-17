@@ -22,7 +22,6 @@ export class HeroPageComponent implements OnInit {
 
   onSubmit(){
     this.log = true;
-    console.log(this.loginForm);
   }
 
 }

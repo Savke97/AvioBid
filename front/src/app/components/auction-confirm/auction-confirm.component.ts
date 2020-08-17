@@ -8,12 +8,5 @@ import { Component, OnInit } from '@angular/core';
 export class AuctionConfirmComponent implements OnInit {
   constructor() { }
 
-  ngOnInit(): void {
-  }
-  auctionYes(): void{
-    console.log('yes');
-  }
-  auctionNo(): void{
-    console.log('no');
-  }
+  ngOnInit() {}
 }

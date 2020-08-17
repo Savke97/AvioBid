@@ -17,7 +17,6 @@ export class CardInfoComponent implements OnInit {
   vremeDolaska: string = '04:45'
   constructor() { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit() {}
 
 }

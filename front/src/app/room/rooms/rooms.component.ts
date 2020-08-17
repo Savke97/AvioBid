@@ -1,11 +1,7 @@
-import { Component, OnInit, ViewChild} from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { ServisService } from 'src/app/servis.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-
-interface StepIncrement{
-  value: string,
-  viewValue: string
-}
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-rooms',
@@ -14,9 +10,8 @@ interface StepIncrement{
 })
 
 
-export class RoomsComponent implements OnInit {
+export class RoomsComponent implements OnInit{
 
-  counter: number = 1;
   listPackage: string [] = ['Laptop', 'Jakna', 'Torba', 'Ljubimac'];
 
   /* Deklaracija za forme */
@@ -25,9 +20,11 @@ export class RoomsComponent implements OnInit {
   increment: number;
 
   bidingForm: FormGroup;
-  biding_Price: number;
+  biding_Price: number = 1000;
 
-  constructor(public servis: ServisService) { }
+  bid_placeHolder: number = 1000;
+
+  constructor(public servis: ServisService, private http: HttpClient) { }
 
   ngOnInit() {
 
@@ -41,29 +38,35 @@ export class RoomsComponent implements OnInit {
 
       'bidingPrice': new FormControl(null, Validators.required)
     })
+
+    /* this.http.get('https://us-central1-aukcija-edit-2020.cloudfunctions.net/getRandomFlight').subscribe((res) => {
+        console.log(res);
+    }) */
   }
+
+
 
 
   /* Submit za auto bid formu */
   onSubmitAutoBid(){
 
-    this.max_Auto_Bid = this.autoBidingForm.get('autoBidMaxPrice').value;
-    this.increment = this.autoBidingForm.get('increment').value;
-    console.log(this.autoBidingForm);
+    this.max_Auto_Bid = parseInt(this.autoBidingForm.get('autoBidMaxPrice').value);
+    this.increment = parseInt(this.autoBidingForm.get('increment').value);
   }
 
   /* Submit za bid fromu */
   onBidSubmit(){
-    
-    this.biding_Price = this.bidingForm.get('bidingPrice').value;
+
+    this.bidingForm.get('bidingPrice').value < this.biding_Price ? alert('Greska!') : this.biding_Price = parseInt(this.bidingForm.get('bidingPrice').value);
+
+    if(this.biding_Price != this.bid_placeHolder){
+
+      this.max_Auto_Bid <= this.biding_Price ? alert('Unesi te ponovo auto bid') : this.biding_Price = this.biding_Price + this.increment;
+    }
+    this.bid_placeHolder = this.biding_Price; 
   }
 
   onLeaveAuction(){
     this.servis.leaveauction = true;
-  }
-
-  onAutoSlide(){
-    this.counter++;
-    this.counter % 2 ? console.log('Auto bid ugasen') : console.log('Auto bid Upaljen');
   }
 }
