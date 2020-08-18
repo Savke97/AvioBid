@@ -1,0 +1,39 @@
+<header>
+  <div class="navigation">
+    <div class="navigation__logo"></div>
+    <div class="navigation__menu">
+      <button class="navigation__menu--btnLogin" mat-stroked-button
+        color="primary" (click)="onLogout()">Logout</button>
+    </div>
+  </div>
+</header>
+<div class="hack"></div>
+
+<app-card-info id="goto"></app-card-info>
+
+
+<div class="conteiner">
+    <div class="room" *ngFor="let room of servis.rooms; let i = index">
+        <div class="room_class">
+            <h4>Business Class</h4>
+            <p><strong>Room no. {{ room.room }}</strong></p>
+        </div>
+        <div class="room_price">
+            <h3>Current Price</h3>
+            <p><strong>$ {{ room.price }}</strong></p>
+            <h4>Total Bids</h4>
+            <p><strong>{{ room.bids }}</strong></p>
+        </div>
+        <div class="room_time">
+            <h4>End date and Time</h4>
+            <!-- Ovde nesto uradi za text ne mogu reasponsive -->
+            <p><strong>{{ room.time }}</strong></p> 
+        </div>
+        <div class="room_btn">
+            <button mat-flat-button color="primary" [routerLink]="['/Bid']" (click)="onStartAuction(i)">Start auction</button>
+            <button mat-flat-button color="warn" class="room_btn--m" (click)="onStopAuction(i)">Close auction</button>
+        </div>
+    </div>
+</div>
+
+<app-footer></app-footer>

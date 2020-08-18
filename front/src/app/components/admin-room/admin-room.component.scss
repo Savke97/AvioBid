@@ -20,6 +20,7 @@ $mat-btn-color: rgb(156, 60, 156);
         box-shadow: none;
     }
 }
+
 // Main deo
 .active{
     margin: 100px 0px 50px 0px;
@@ -31,6 +32,54 @@ $mat-btn-color: rgb(156, 60, 156);
         background-color: transparent;
     }
 }
+
+
+// main color of website
+$color-blue:#006272; 
+
+// Hack
+.hack {
+    content: "";
+    height: .2rem;
+    width: 100%;
+    background-color: #eee;
+    margin-bottom: 4rem;
+}
+
+// Header content
+header{
+    width:90%;
+    height: 60px;
+    margin: 0 auto;
+}
+.navigation{
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    transition: all .2s;
+    
+    &__logo{
+        width:150px;
+        height: 40px;
+        background-image: url("../header/img/logo.png");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        content: '';
+        &:hover{
+            cursor: pointer;
+        }
+    }
+    &__menu{
+        &--btnLogin{
+            border-radius: 15px;
+            font-size: medium;
+        }
+    }
+}
+
+// Main deo
+
 .conteiner{
     display: grid;
     grid-template-columns: 150px 1fr 150px;
@@ -59,17 +108,14 @@ $mat-btn-color: rgb(156, 60, 156);
     border-radius: .5rem;
     @media only screen and (max-width: 33.125em) {
         grid-template-columns: 0;
-        display:block;
-        width:80%;
-        margin: 0 auto;
-        margin-bottom:0.3rem;
-        border-radius:20px;
 
-        #priceMargin{
-            margin-bottom:3.5rem; //id od trenutne cene 
-        }
-        p,h1,h2,h3,h4,h5,h6{
-            font-size:2.5rem;
+    }
+    @media only screen and (max-width: 73.125em) {
+        &_btn {
+            &--m {
+                margin-top: .4rem;
+                margin-left: 0rem;
+            }
         }
     }
 
@@ -77,10 +123,6 @@ $mat-btn-color: rgb(156, 60, 156);
         grid-column: 2/3;
         justify-self: center;
         align-self: center;
-        @media only screen and (max-width: 33.125em){
-            margin-top:2.2rem;
-            margin-bottom:3.5rem;
-        }
     }
     &_price{
         grid-column: 3/4;
@@ -88,12 +130,6 @@ $mat-btn-color: rgb(156, 60, 156);
         align-self: center;
         h3{
             color: $ul-color;
-        }
-        @media only screen and (max-width: 33.125em){
-            margin-bottom:3.5rem;
-            &--roomPrice{
-                margin-bottom: 100px;
-            }
         }
     }
     &_time{
@@ -104,27 +140,26 @@ $mat-btn-color: rgb(156, 60, 156);
             color: #FF4136;
             font-size: 90%;
         }
-        @media only screen and (max-width: 33.125em){
-            font-size:3.1rem;
-            margin-bottom:3rem;
-            margin-top:3rem;
-        }
     }
+
     &_join{
         grid-column: 5/6;
         justify-self: center;
         align-self: center;
-        @media only screen and (max-width: 33.125em){
-            button{
-                width:90%;
-                margin:0 auto;
-                height: 5rem;
-                margin-bottom:20px;
-                font-size:2.2rem;
-            } 
+    }
+}
+
+    &_btn{
+        grid-column: 5/6;
+        justify-self: center;
+        align-self: center;
+
+        &--m {
+            margin-left: .3rem;
         }
     }
 }
+
 
 .spinerConteiner{
     margin: 50px 0px 50px 0px;
@@ -132,10 +167,6 @@ $mat-btn-color: rgb(156, 60, 156);
     grid-template-columns: 250px 1fr 250px;
     justify-content: center;
     align-content: center;
-
-    @media screen and (max-width: 33.125em){
-        margin:0;
-    }
 
     &_spiner{
         grid-column: 2/3;
