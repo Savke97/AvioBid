@@ -22,12 +22,13 @@
         </div>
         <div class="room_price">
             <h3>Current Price</h3>
-            <p><strong>$ {{ room.price }}</strong></p>
+            <!-- Ne mogu da ga nadjem u css uz pomoc scss klasa, morao sam odvojeno id -->
+            <p id="priceMargin"><strong>$ {{ room.price }}</strong></p>
             <h4>Total Bids</h4>
             <p><strong>{{ room.bids }}</strong></p>
         </div>
         <div class="room_time">
-            <h4>End date and Time</h4>
+            <h4 class="room__time--header">End date and Time</h4>
             <!-- Ovde nesto uradi za text ne mogu reasponsive -->
             <p><strong>{{ room.time }}</strong></p> 
         </div>

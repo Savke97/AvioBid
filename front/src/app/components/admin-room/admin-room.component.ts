@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ServisService } from '../../servis.service';
+import { ServisService } from 'src/app/servis.service';
+
 @Component({
   selector: 'app-admin-room',
   templateUrl: './admin-room.component.html',
@@ -7,7 +8,8 @@ import { ServisService } from '../../servis.service';
 })
 export class AdminRoomComponent implements OnInit {
 
-  constructor(public servis: ServisService) { }
+
+  constructor(public service: ServisService) {}
 
   ngOnInit(): void {
   }

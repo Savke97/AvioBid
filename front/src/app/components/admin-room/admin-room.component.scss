@@ -21,6 +21,18 @@ $mat-btn-color: rgb(156, 60, 156);
     }
 }
 
+// Main deo
+.active{
+    margin: 100px 0px 50px 0px;
+    text-align: center;
+    color: $text-color-2;
+    &__head {
+        display: inline-block;
+        animation: pulse 1s infinite;
+        background-color: transparent;
+    }
+}
+
 
 // main color of website
 $color-blue:#006272; 
@@ -129,6 +141,14 @@ header{
             font-size: 90%;
         }
     }
+
+    &_join{
+        grid-column: 5/6;
+        justify-self: center;
+        align-self: center;
+    }
+}
+
     &_btn{
         grid-column: 5/6;
         justify-self: center;
