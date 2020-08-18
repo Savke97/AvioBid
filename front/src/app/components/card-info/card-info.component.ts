@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ServisService } from 'src/app/servis.service';
 
 @Component({
   selector: 'app-card-info',
@@ -7,16 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CardInfoComponent implements OnInit {
 
-  // Information
-  fromPlace: string = 'New York';
-  toPlace: string = 'Dublin';
-  time: string = 'Tue, 15 Dec 2020';
-  
-  // Time
-  vremePolaska: string = '17:30'
-  vremeDolaska: string = '04:45'
-  constructor() { }
+  info;
+  constructor(public servis: ServisService) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.info = this.servis.cards;
+  }
 
 }

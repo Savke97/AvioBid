@@ -14,8 +14,12 @@ export class AdminRoomComponent implements OnInit {
 
   onLogout() {}
 
-  onStartAuction(roomIndex: number){}
+  onStartAuction(roomIndex: boolean){
+    this.servis.checkCard = roomIndex;
+  }
   
-  onStopAuction() {}
+  onStopAuction(roomIndex: number) {
+    // this.servis.indexCard = number;
+  }
  
 }

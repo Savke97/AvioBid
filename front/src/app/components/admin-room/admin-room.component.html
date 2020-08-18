@@ -30,7 +30,7 @@
             <p><strong>{{ room.time }}</strong></p> 
         </div>
         <div class="room_btn">
-            <button mat-flat-button color="primary" (click)="onStartAuction(i)">Start auction</button>
+            <button mat-flat-button color="primary" [routerLink]="['/Bid']" (click)="onStartAuction(i)">Start auction</button>
             <button mat-flat-button color="warn" class="room_btn--m" (click)="onStopAuction(i)">Close auction</button>
         </div>
     </div>

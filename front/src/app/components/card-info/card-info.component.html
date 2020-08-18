@@ -5,20 +5,20 @@
 
     <div class="flight_info">
         <p>Economy</p>
-        <h3 style="font-weight: 600;">{{fromPlace}} to {{toPlace}}</h3>
-        <p>{{time}}</p>
+        <h3 style="font-weight: 600;">{{info[3].fromPlace}} to {{info[3].toPlace}}</h3>
+        <p>{{info[3].time}}</p>
     </div>
 
     <div class="flight_time">
         <div class="flight_time-l">
-            <h4>{{vremePolaska}}</h4>
+            <h4>{{info[3].departureTime}}</h4>
             <p>JFK</p>
             <div class="gornja"></div>
         </div>
         <div class="hack__1"></div>
         <div class="flight_time-r">
             <div class="donja"></div>
-            <h4>{{vremeDolaska}}</h4>
+            <h4>{{info[3].arrivalTime}}</h4>
             <p>DUB</p>
         </div>
     </div>
