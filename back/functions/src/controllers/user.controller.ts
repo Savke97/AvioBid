@@ -1,6 +1,7 @@
 import User from '../models/user.interface';
 import * as functions from 'firebase-functions';
 import { db } from '../firebase';
+import { response, request } from 'express';
 
 // [Route("api/users")]
 
@@ -51,6 +52,38 @@ export const deleteUserById = functions.https.onRequest(async (request, response
         response.status(500).send(error);
     }
 });
+
+
+function sendMail () {
+
+    try {
+        cors(request, response, () => {
+      
+            // getting dest email by query string
+            const dest = request.query.dest;
+    
+            const mailOptions = {
+                from: 'Aca Perin <acaperin356@gmail.com>', 
+                to: dest,                                   //??????????????????
+                subject: 'Subject: Bla Bla', 
+                html: `<p>This is a paragraph.</p>`
+            };
+      
+            
+            return transporter.sendMail(mailOptions, (erro:any, info:any) => {
+                if(erro){
+                    return response.send(erro.toString());
+                }
+                return response.send('Sended');
+            });
+        });  
+    } catch (error) {
+        response.status(500).send(error);
+    }
+
+};
+
+
 
 
 
