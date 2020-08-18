@@ -54,19 +54,27 @@ export const deleteUserById = functions.https.onRequest(async (request, response
 });
 
 
-function sendMail () {
+async function sendMail (dest:any) {
 
     try {
         cors(request, response, () => {
       
-            // getting dest email by query string
-            const dest = request.query.dest;
+            // getting dest email by query string   ?????????
+            //const dest = request.query.dest;
     
             const mailOptions = {
                 from: 'Aca Perin <acaperin356@gmail.com>', 
                 to: dest,                                   //??????????????????
-                subject: 'Subject: Bla Bla', 
-                html: `<p>This is a paragraph.</p>`
+                subject: 'Available auctions for a business class ticket',
+                html: `<body>
+                        <h1 style="font-family:'verdana'">Business class tickets on sale!</h1>
+                        <hr>
+                        <p style="font-family:'verdana'">A unique opportunity to upgrade your economic class ticket to a business class ticket. Take part in an auction and get a chance to win a business class ticket for 50% off or more. As long as you wait, there is a bigger chance for someone else to grab that ticket. Due to that, hurry up and good luck!</p>
+                        <br>
+                        <a href="https://www.youtube.com/"><p style="color:DodgerBlue;"><font size = "4">Just click on this link :)</font></p></a>
+                        <br><br><br>
+                        <center><img src="https://www.logo-designer.co/wp-content/uploads/2019/01/2019-aer-lingus-new-logo-design-aircraft-livery-brand-refresh.png" alt="Aer Lingus" width="320" height="321"></center>
+                        </body>`
             };
       
             
