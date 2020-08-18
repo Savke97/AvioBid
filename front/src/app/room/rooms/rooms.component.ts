@@ -41,10 +41,6 @@ export class RoomsComponent implements OnInit{
 
       'bidingPrice': new FormControl(null, Validators.required)
     })
-
-    /* this.http.get('https://us-central1-aukcija-edit-2020.cloudfunctions.net/getRandomFlight').subscribe((res) => {
-        console.log(res);
-    }) */
   }
 
   /* Submit za auto bid formu */

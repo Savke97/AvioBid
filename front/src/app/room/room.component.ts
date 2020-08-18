@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ServisService } from '../servis.service';
+import { HttpClient } from '@angular/common/http';
+import { Flights } from '../moduls/Flights'
+import { Observable } from 'rxjs';
+
 
 @Component({
   selector: 'app-room',
@@ -8,12 +12,18 @@ import { ServisService } from '../servis.service';
 })
 export class RoomComponent implements OnInit {
 
+  flights: Flights;
   show_Room: boolean = false;
   show_Spiner: boolean = false;
 
-  constructor(public servis: ServisService) { }
+
+
+
+  constructor(public servis: ServisService, private http: HttpClient) { }
 
   ngOnInit(): void {}
+
+
 
   onShowRoom(roomIndex: number){
 

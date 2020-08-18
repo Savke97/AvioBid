@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ServisService } from 'src/app/servis.service';
 
 @Component({
   selector: 'app-card-info',
@@ -7,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CardInfoComponent implements OnInit {
 
+
+  fl: any;
   // Information
   fromPlace: string = 'New York';
   toPlace: string = 'Dublin';
@@ -15,8 +18,13 @@ export class CardInfoComponent implements OnInit {
   // Time
   vremePolaska: string = '17:30'
   vremeDolaska: string = '04:45'
-  constructor() { }
+  constructor(private servis: ServisService) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+
+    this.servis.getRandomFlight().subscribe((data) => {
+        
+    })
+  }
 
 }

@@ -1,16 +1,27 @@
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ServisService {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   current_max_Bid: number = 0;
   leaveauction: boolean = false;
   index: number;
   won: boolean = false;
+
+
+  public getRandomFlight(): Observable<any>{
+    return this.http.get('https://us-central1-aukcija-edit-2020.cloudfunctions.net/app/api/flights/getRandomFlight');
+  }
+
+  public userData(data: any): Observable<any>{
+    return this.http.post('https://us-central1-aukcija-edit-2020.cloudfunctions.net/app/api/flights/getRandomFlight', data);
+  }
 
   user = [
     {
