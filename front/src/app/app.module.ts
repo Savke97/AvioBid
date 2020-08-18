@@ -28,6 +28,7 @@ import { AuctionConfirmComponent } from './components/auction-confirm/auction-co
 import {MatExpansionModule} from '@angular/material/expansion';
 import { HeroPageComponent } from './components/hero-page/hero-page.component';
 import { HttpClientModule } from '@angular/common/http';
+import { AdminRoomComponent } from './components/admin-room/admin-room.component';
 
 
 @NgModule({
@@ -40,7 +41,8 @@ import { HttpClientModule } from '@angular/common/http';
     PopupWinnerComponent,
     FooterComponent,
     AuctionConfirmComponent,
-    HeroPageComponent
+    HeroPageComponent,
+    AdminRoomComponent
   ],
   imports: [
     BrowserModule,
