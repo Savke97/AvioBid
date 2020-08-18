@@ -8,11 +8,23 @@ import { ServisService } from 'src/app/servis.service';
 })
 export class CardInfoComponent implements OnInit {
 
-  info;
-  constructor(public servis: ServisService) { }
+
+  fl: any;
+  // Information
+  fromPlace: string = 'New York';
+  toPlace: string = 'Dublin';
+  time: string = 'Tue, 15 Dec 2020';
+  
+  // Time
+  vremePolaska: string = '17:30'
+  vremeDolaska: string = '04:45'
+  constructor(private servis: ServisService) { }
 
   ngOnInit() {
-    this.info = this.servis.cards;
+
+    this.servis.getRandomFlight().subscribe((data) => {
+        
+    })
   }
 
 }
