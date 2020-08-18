@@ -1,9 +1,16 @@
-<app-header></app-header>
+<header>
+  <div class="navigation">
+    <div class="navigation__logo"></div>
+    <div class="navigation__menu">
+      <button class="navigation__menu--btnLogin" mat-stroked-button
+        color="primary" (click)="onLogout()">Logout</button>
+    </div>
+  </div>
+</header>
+<div class="hack"></div>
 
 <app-card-info id="goto"></app-card-info>
-<div class="active">
-    <h1 class="active__head" style="font-size: 3rem;">Active Rooms (4)</h1>
-</div>
+
 
 <div class="conteiner">
     <div class="room" *ngFor="let room of servis.rooms; let i = index">
@@ -22,8 +29,9 @@
             <!-- Ovde nesto uradi za text ne mogu reasponsive -->
             <p><strong>{{ room.time }}</strong></p> 
         </div>
-        <div class="room_join">
-            <button mat-flat-button color="accent" (click)="onShowRoom(i)">test</button>
+        <div class="room_btn">
+            <button mat-flat-button color="primary" (click)="onStartAuction(i)">Start auction</button>
+            <button mat-flat-button color="warn" class="room_btn--m" (click)="onStopAuction(i)">Close auction</button>
         </div>
     </div>
 </div>

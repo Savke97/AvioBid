@@ -1,4 +1,5 @@
-import { Injectable } from '@angular/core';
+import { Injectable, EventEmitter } from '@angular/core';
+import { RoomComponent } from './room/room.component';
 
 @Injectable({
   providedIn: 'root'
@@ -18,7 +19,7 @@ export class ServisService {
       born: '02 mar 1999'
     }
   ];
-
+  
   rooms = [
     {
       room: 1,
