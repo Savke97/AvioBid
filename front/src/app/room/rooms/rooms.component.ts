@@ -41,6 +41,7 @@ export class RoomsComponent implements OnInit{
 
       'bidingPrice': new FormControl(null, Validators.required)
     })
+    
   }
 
   /* Submit za auto bid formu */

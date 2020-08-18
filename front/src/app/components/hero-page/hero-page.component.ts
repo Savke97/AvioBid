@@ -28,7 +28,7 @@ export class HeroPageComponent implements OnInit {
     this.log = true;
     this.email = this.loginForm.get('email').value;
     this.name = this.loginForm.get('fullname').value;
-    this.servis.userData({email: this.email, name: this.name});
+    this.servis.setUserData({email: this.email, name: this.name});
   }
 
 }

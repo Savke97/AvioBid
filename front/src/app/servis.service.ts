@@ -19,8 +19,12 @@ export class ServisService {
     return this.http.get('https://us-central1-aukcija-edit-2020.cloudfunctions.net/app/api/flights/getRandomFlight');
   }
 
-  public userData(data: any): Observable<any>{
+  public setUserData(data: any): Observable<any>{
     return this.http.post('https://us-central1-aukcija-edit-2020.cloudfunctions.net/app/api/flights/getRandomFlight', data);
+  }
+
+  public getUser(): Observable<any>{
+    return this.http.get('https://us-central1-aukcija-edit-2020.cloudfunctions.net/app/api/users/');
   }
 
   user = [
