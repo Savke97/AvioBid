@@ -1,4 +1,3 @@
-import User from '../models/user.interface';
 import * as functions from 'firebase-functions';
 import { db } from '../firebase';
 
@@ -11,7 +10,9 @@ export const getAllUsers = functions.https.onRequest(async (request, response) =
         const users: any = [];
         const snapshot = await usersRef.get();
         snapshot.forEach(doc => {
-            users.push(doc.data());
+            const user = doc.data();
+            user.email = doc.id;  // userID
+            users.push(user);
         });
         response.send(users);
     } catch (error) {
@@ -33,9 +34,8 @@ export const getUserById = functions.https.onRequest(async (request, response) =
 // [HttpPost]
 export const setUser = functions.https.onRequest(async (request, response) => {
     try {
-        const user: User = request.body;
-        const result = await db.collection('users').add(user);
-        (result) ? response.send(user) : response.send(undefined);
+        const result = await db.collection('users').doc(request.body.email).set({name: request.body.name});
+        (result) ? response.send("The user has been sucessfully added.") : response.send(undefined);
     } catch (error) {
         response.status(500).send(error);
     }

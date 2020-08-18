@@ -10,6 +10,8 @@ export const getAllFlights = functions.https.onRequest(async (request, response)
         const flights: any = [];
         const snapshot = await flightsRef.get();
         snapshot.forEach(doc => {
+            const flight = doc.data();
+            flight.flightID = doc.id;
             flights.push(doc.data());
         });
         response.send(flights);
@@ -39,7 +41,7 @@ export const getRandomFlight = functions.https.onRequest(async (request, respons
         let count = 0;
         snapshot.forEach(doc => {
             const flight = doc.data();
-            flight.flight = doc.id;
+            flight.flightID = doc.id;
             flights.push(flight);
             count++;
         });
