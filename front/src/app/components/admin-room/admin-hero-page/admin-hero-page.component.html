@@ -1,0 +1,43 @@
+<header>
+    <div class="navigation">
+      <div class="navigation__logo"></div>
+      <div class="navigation__menu">
+        <button class="navigation__menu--btnLogin" mat-stroked-button
+          color="primary" (click)="onLogout()">Logout</button>
+      </div>
+    </div>
+  </header>
+  <div class="hack"></div>
+  
+
+<mat-card class="card-content" *ngFor="let card of servis.cards; let i = index">
+    <div class="icon">
+        <img class="icon__image" src="assets/plane.svg">
+    </div>
+
+    <div class="flight_info">
+        <p>Economy</p>
+        <h3 style="font-weight: 600;">{{card.fromPlace}} to {{card.toPlace}}</h3>
+        <p>{{card.time}}</p>
+    </div>
+
+    <div class="flight_time">
+        <div class="flight_time-l">
+            <h4>{{card.departureTime}}</h4>
+            <p>JFK</p>
+            <div class="gornja"></div>
+        </div>
+        <div class="hack__1"></div>
+        <div class="flight_time-r">
+            <div class="donja"></div>
+            <h4>{{card.arrivalTime}}</h4>
+            <p>DUB</p>
+        </div>
+    </div>
+
+    <div class="flight_btn">
+            <button mat-flat-button color="primary" [routerLink]="['/AdminRoom']" (click)="onShowAuction(i)">View auction</button>
+    </div>
+</mat-card>
+
+<app-footer></app-footer>

@@ -20,6 +20,7 @@ $mat-btn-color: rgb(156, 60, 156);
         box-shadow: none;
     }
 }
+
 // Main deo
 .active{
     margin: 100px 0px 50px 0px;
@@ -31,6 +32,54 @@ $mat-btn-color: rgb(156, 60, 156);
         background-color: transparent;
     }
 }
+
+
+// main color of website
+$color-blue:#006272; 
+
+// Hack
+.hack {
+    content: "";
+    height: .2rem;
+    width: 100%;
+    background-color: #eee;
+    margin-bottom: 4rem;
+}
+
+// Header content
+header{
+    width:90%;
+    height: 60px;
+    margin: 0 auto;
+}
+.navigation{
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    transition: all .2s;
+    
+    &__logo{
+        width:150px;
+        height: 40px;
+        background-image: url("../header/img/logo.png");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        content: '';
+        &:hover{
+            cursor: pointer;
+        }
+    }
+    &__menu{
+        &--btnLogin{
+            border-radius: 15px;
+            font-size: medium;
+        }
+    }
+}
+
+// Main deo
+
 .conteiner{
     display: grid;
     grid-template-columns: 150px 1fr 150px;
@@ -59,6 +108,15 @@ $mat-btn-color: rgb(156, 60, 156);
     border-radius: .5rem;
     @media only screen and (max-width: 33.125em) {
         grid-template-columns: 0;
+
+    }
+    @media only screen and (max-width: 73.125em) {
+        &_btn {
+            &--m {
+                margin-top: .4rem;
+                margin-left: 0rem;
+            }
+        }
     }
 
     &_class{
@@ -83,12 +141,25 @@ $mat-btn-color: rgb(156, 60, 156);
             font-size: 90%;
         }
     }
+
     &_join{
         grid-column: 5/6;
         justify-self: center;
         align-self: center;
     }
 }
+
+    &_btn{
+        grid-column: 5/6;
+        justify-self: center;
+        align-self: center;
+
+        &--m {
+            margin-left: .3rem;
+        }
+    }
+}
+
 
 .spinerConteiner{
     margin: 50px 0px 50px 0px;

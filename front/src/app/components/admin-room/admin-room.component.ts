@@ -8,13 +8,20 @@ import { ServisService } from 'src/app/servis.service';
 })
 export class AdminRoomComponent implements OnInit {
 
+
   constructor(public service: ServisService) {}
+
   ngOnInit(): void {
   }
 
-  onShowRoom(roomIndex: number){
+  onLogout() {}
 
-    document.getElementById("goto").scrollIntoView({behavior: 'smooth'});
-
+  onStartAuction(roomIndex: boolean){
+    this.servis.checkCard = roomIndex;
   }
+  
+  onStopAuction(roomIndex: number) {
+    // this.servis.indexCard = number;
+  }
+ 
 }
