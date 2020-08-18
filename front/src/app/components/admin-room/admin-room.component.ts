@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { ServisService } from '../../servis.service';
 @Component({
   selector: 'app-admin-room',
   templateUrl: './admin-room.component.html',
@@ -7,14 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminRoomComponent implements OnInit {
 
-  constructor() { }
+  constructor(public servis: ServisService) { }
 
   ngOnInit(): void {
   }
 
-  onShowRoom(roomIndex: number){
+  onLogout() {}
 
-    document.getElementById("goto").scrollIntoView({behavior: 'smooth'});
-
+  onStartAuction(roomIndex: boolean){
+    this.servis.checkCard = roomIndex;
   }
+  
+  onStopAuction(roomIndex: number) {
+    // this.servis.indexCard = number;
+  }
+ 
 }
